@@ -1,0 +1,26 @@
+<div class="container">
+ <div>
+    <h2>Hello {{name}}</h2>
+  </div>
+  <!-- <form [formGroup]="radioTest">
+    <input type="radio" class="btn btn-primary" id="switch_left"  name="gender" value='Male' formControlName="gender" [(ngModel)]='gender'>Male
+    <input type="radio" class="btn btn-primary"  id="switch_right" name='gender' value='Female' formControlName="gender" [(ngModel)]='gender'>Female
+    <button type="button" [disabled]="radioTest.controls['gender'].invalid">Gender Button</button>
+  </form>
+  <pre>{{radioTest.value | json}}</pre>
+  <pre>{{radioTest.valid}}</pre>
+  <pre>{{gender}}</pre> -->
+
+	<form [formGroup]="radioTest">
+	<div class="switch-field">
+		<div class="switch-title">Is this awesome?</div>
+		<input type="radio" id="switch_left" name="gender" value='Male' formControlName="gender" [(ngModel)]='gender' checked/>
+		<label for="switch_left">Male</label>
+		<input type="radio" id="switch_right" name='gender' value='Female' formControlName="gender" [(ngModel)]='gender' />
+		<label for="switch_right">Female</label>
+	</div>
+		<pre>{{radioTest.value | json}}</pre>
+		<pre>{{radioTest.valid}}</pre>
+		<pre>{{gender}}</pre>
+	</form>
+</div>

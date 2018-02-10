@@ -1,0 +1,16 @@
+<header class="intro-header">
+  <div class="container">
+    <div class="intro-message">
+      <h1>Welcome to Angular 4</h1>
+      <h3>A Journey to Angular 4</h3>
+      <hr class="intro-divider">
+      <ul class="list-inline intro-social-buttons">
+        <li class="list-inline-item" *ngFor="let page of links">
+          <a routerLink="/{{page.url}}" routerLinkActive="active" class="btn btn-secondary btn-lg">
+            <i class="fa fa-twitter fa-fw"></i>
+            <span class="network-name">{{page.name}}</span>
+          </a>
+      </ul>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,45 @@
+<div class="container">
+      <div class="jumbotron">
+		<form [formGroup]="myForm" (ngSubmit) = "onFormSubmit()">
+			<div class="form-group">
+				<label for="username">username :</label>
+				<input type="username" class="form-control" id="username" formControlName ="username">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+				<input type="password" class="form-control" id="pwd" formControlName ="password">
+				<!-- <span *ngIf="passInvalid">{{stringValue}}</span>
+				<alert type="danger" *ngIf="passInvalid">{{stringValue}}</alert> -->
+			</div>
+			
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div>
+<div class="container">
+	<div class="jumbotron">
+		<form (ngSubmit) = "onNgModalFormSubmit()">
+			<div class="form-group">
+				<label for="username">username :</label>
+				<input type="text" class="form-control" id="username" name="username"[(ngModel)] ="username">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+				<input type="password" class="form-control" id="pwd" name="password" [(ngModel)] ="password">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

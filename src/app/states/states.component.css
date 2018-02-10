@@ -1,0 +1,31 @@
+.card {
+    width: 25rem;
+    height: 15rem;
+    background-color: #fff;
+    color: black;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(222, 14, 62, 0.2);
+}
+.btn {
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.428571429;
+    font-size:smaller;
+    width: 60x;
+    word-wrap: break-word;
+}
+
+.background-img {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../../assets/images/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.adjust-states-btn{
+    margin: 20px;
+}
+  

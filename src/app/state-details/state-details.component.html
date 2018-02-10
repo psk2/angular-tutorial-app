@@ -1,0 +1,25 @@
+<!-- Page Content -->
+<div class="container">
+	<div *ngIf="stateDetails">
+		<div class="jumbotron">
+			<h1 class="display-3">{{stateDetails.name}} Details !</h1>
+			<p class="lead" *ngIf="stateDetails.largest_city">This largest city of <strong>{{stateDetails.name}}</strong> is <strong>{{stateDetails.largest_city}}.</strong></p>
+			<hr class="my-4">
+			<p><span *ngIf="stateDetails.area">It's area is <strong>{{stateDetails.area}}</strong> and </span>capital  city is <strong>{{stateDetails.capital}}</strong>.</p>
+			<p class="lead">
+				<span>Click here to find Another One.</span>&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/states" routerLinkActive="active" class="btn btn-primary" role="button">Find Another One.!</a>
+			</p>
+		</div>
+	</div>
+	<div *ngIf="!stateDetails">
+			<div class="jumbotron">
+				<h1 class="display-3">Please wait!</h1>
+				<p class="lead">It's Loading...</p>
+				<hr class="my-4">
+			</div>
+
+	</div>
+</div>
+
+
+

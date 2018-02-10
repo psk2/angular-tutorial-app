@@ -1,0 +1,26 @@
+<!-- Page Content -->
+<div class="container">
+    <div>
+      <div class="jumbotron">
+        <h1 class="display-3">This is Parent Component..!</h1>
+        <hr class="my-4">
+        <div class="form-group">
+            <label for="username">Parent Data Here :</label>
+             <input type="text" class="form-control"  #parentData (keyup)="0"/>
+          </div>
+        
+        <p class="lead">
+          <span>{{showChildMessage}}</span>
+        </p>
+
+        <h3>Value From Child with the help of Service: <strong>{{gottenValue}}</strong></h3>
+      </div>
+    </div>
+    <div id="child component">
+        <app-child-parent [parentValue]="parentData.value" (childValue)="gotFromChild($event)"></app-child-parent>        
+    </div>
+</div>
+  
+  
+  
+  
