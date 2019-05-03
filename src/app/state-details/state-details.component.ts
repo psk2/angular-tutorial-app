@@ -18,7 +18,7 @@ export class StateDetailsComponent implements OnInit {
       console.log(stateId);
       this.myService.getstateDetails(stateId).subscribe(
         res =>{
-          this.stateDetails = res.RestResponse.result;
+          this.stateDetails = res;
           console.log(this.stateDetails);
         }
       )
