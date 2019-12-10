@@ -20,6 +20,6 @@ export class ChildParentComponent implements OnInit {
   }
 
   clicked(){
-    this.childValue.emit("Child Is Giving you the value :)")
+    this.childValue.emit("I'm the value given by your child :)")
   }
 }

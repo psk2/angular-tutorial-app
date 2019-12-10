@@ -19,7 +19,7 @@ export class AppComponent {
   tutorial: string;
   student:any;
   title = 'app';
-  username = 'Angular 4 ';
+  username = 'Angular';
   enabled_flag = false;
   links = [
     {
@@ -34,10 +34,10 @@ export class AppComponent {
       name: 'Form',
       url : 'forms'
     },
-    {
-      name: 'New-form',
-      url : 'new-form'
-    },
+    // {
+    //   name: 'New-form',
+    //   url : 'new-form'
+    // },
     {
       name: 'Child',
       url : 'child-parent'
@@ -51,35 +51,14 @@ export class AppComponent {
   constructor(private myService:NewServiceService){ 
     
   }
-  // myService.setString("why is this happening");
-  
-  // getUsers(){
-
-    
     gotoDetail(){
       this.student = {
         name: "anand <br/> battacharya"
       }
       console.log(this.username)
-      // this.student = "Anand"
     }
   ngOnInit(){
     this.date = new Date();
-    // setInterval(() => { 
-    //   this.date = new Date();
-    // }, 1000 * 60 * 10);
-    // setTimeout(() => {
-    //   this.date = new Date();
-    // },500);
-    // this.myService.getUser().subscribe(
-    //   res => {
-    //     console.log(res);
-    //     this.resultSet = res.RestResponse.result;
-    //     this.resultSetCount = this.resultSet.length;
-    //     // if(this.resultSetCount) 
-    //     // this.enabled_flag = true;
-    //   }
-    // );
   }
 
 }

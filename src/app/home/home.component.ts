@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   links = [
     {
-      name: 'Search',
-      url : 'search'
+      name: 'Form',
+      url : 'forms'
     },
     {
       name: 'States',
-      url : 'user'
+      url : 'states'
     }
   ];
   constructor() { }

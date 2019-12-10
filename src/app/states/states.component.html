@@ -1,48 +1,25 @@
-<!-- <div class="container">
-    <div class="row adjust-states-btn">
-        <button class="btn btn-primary pull-right" (click)=sortyBy($event)>Sort by {{togggleUsing}}</button>
-    </div>
-    <div class="background-img">
-        <div class="row" *ngIf="resultSet">
-            <div class="col-md-4" *ngFor="let state of resultSet | orderBy:toggleValue:OrderByPipe">
-                <div class="card text-center">
-                    <div class="card-block">
-                        <h4 class="card-title">{{state.name }}</h4>
-                        <p class="card-text">Capital : {{state.capital}}</p>
-                        <button class="btn btn-primary" (click)=getSomeDetails(state)>Details of {{state.name}}</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- HardCover -->
-<!-- | orderBy:toggleValue:OrderByPipe -->
-
 <div class="container">
-    <div class="background-img">
-        <div class="row">
-            <div class="col-md-4" *ngFor="let device of deviceUsageDetails">
-                <div class="card  text-center" >
-                    <div class="card-block">
-                        <!-- <h3 class="card-title">{{device.deviceName }}</h3> -->
-
-                        <p class="card-text">deviceName : {{device.deviceName}}</p>
-                        <p class="card-text">airlineName : {{device.airlineName}}</p>
-                        <p class="card-text">workstationName : {{device.workstationName}}</p>
-                        <p class="card-text">date : {{device.date}}</p>
-                        <p class="card-text">count : {{device.count}}</p>
-                        <button class="btn btn-primary" (click)="getSomeDetails(event)">Iata Code is {{device.iataCode}}</button>
-                    </div>
-                </div>
-            </div>
+  <div class="row adjust-states-btn">
+    <button class="btn btn-primary pull-right" (click)="sortyBy($event)">
+      Sort by {{ togggleUsing }}
+    </button>
+  </div>
+  <div class="background-img">
+    <div class="row" *ngIf="resultSet">
+      <div
+        class="col-md-4"
+        *ngFor="let state of resultSet | orderBy: toggleValue:OrderByPipe"
+      >
+        <div class="card text-center">
+          <div class="card-block">
+            <h4 class="card-title">{{ state.name }}</h4>
+            <p class="card-text">Capital : {{ state.capital }}</p>
+            <button class="btn btn-primary" (click)="getSomeDetails(state)">
+              Details of {{ state.name }}
+            </button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
-<!-- airlineName: "Emirates Airlines"
-count: 1
-date: "2017-02-24 22:32:32"
-deviceName: "YYZ1CN02PCP_IP_BTP"
-iataCode: "YYZ"
-workstationName: "YYZ1CN02" -->
