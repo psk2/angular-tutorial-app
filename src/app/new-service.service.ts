@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Rx";
-import { Http, Headers, RequestOptions } from "@angular/http";
+import { Observable } from "rxjs";
 import { HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class NewServiceService {
@@ -9,7 +9,7 @@ export class NewServiceService {
   myString2: string;
   myString: string;
   apiEndPoint: string;
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.http = http;
     this.apiEndPoint = 'http://localhost:3000/state'
   }
@@ -41,11 +41,12 @@ export class NewServiceService {
     // const url= 'http://services.groupkt.com/state/get/IND/all';
     return this.http
       .get(`${this.apiEndPoint}/IND`)
-      .map(function (res) {
-        console.log('res :', res);
-        const data = res.json();
-        return data;
-      });
+      
+      // .map(function (res) {
+      //   console.log('res :', res);
+      //   const data = res.json();
+      //   return data;
+      // });
   }
 
   getstateDetails(code): Observable<any> {
@@ -53,10 +54,11 @@ export class NewServiceService {
     // const searchText = 'js';
     // const url = 'http://services.groupkt.com/country/get/all';
     const url = `${this.apiEndPoint}/IND/${code}`
-    return this.http.get(url).map(res => {
-      const user = res.json();
-      return user;
-    });
+    return this.http.get(url)
+    // .map(res => {
+    //   const user = res.json();
+    //   return user;
+    // });
   }
 
   getAuthToken(): Observable<any> {
@@ -65,17 +67,19 @@ export class NewServiceService {
       "userName": "sandbox.psk1234",
       "password": "Password$2"
     }
-    return this.http.post(url, requestBody).map(res => {
-      const user = res.json();
-      return user;
-    });
+    return this.http.post(url, requestBody)
+    
+    // .map(res => {
+    //   const user = res.json();
+    //   return user;
+    // });
   }
 
   getDeviceUsageDetails(jwt): Observable<any> {
     console.log('jwt :', jwt);
-    let headers = new Headers();
+    let headers = new HttpHeaders();
     headers.append('Authorization', `Bearer ${jwt}`);
-    let options = new RequestOptions({ headers: headers });
+    let options ={ headers: headers };
     let requestBody = {
       "workstationName": "YYZ1CN02",
       "iataCode": "YYZ",
@@ -84,9 +88,11 @@ export class NewServiceService {
       "accountingCode": "176"
     }
     const url = `http://localhost:8082/api/deviceusage`;
-    return this.http.post(url, requestBody, options).map(res => {
-      const user = res.json();
-      return user;
-    });
+    return this.http.post(url, requestBody, options);
+    
+    // .map(res => {
+    //   const user = res.json();
+    //   return user;
+    // });
   }
 }

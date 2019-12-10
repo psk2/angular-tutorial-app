@@ -5,8 +5,8 @@ import { NewServiceService } from './new-service.service';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routes';
 
-import { HttpModule } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import {HttpClientModule} from '@angular/common/http';
+import { Observable } from 'rxjs';
 import 'rxjs/Rx';
 import { AlertModule } from 'ngx-bootstrap';
 import { StateDetailsComponent } from './state-details/state-details.component';
@@ -36,7 +36,7 @@ import { CustomDirective } from './directives/custom.directive';
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AlertModule.forRoot()
   ],
